@@ -19,8 +19,6 @@ function init() {
 
     botonesPlayVideos = document.querySelectorAll('.botonPlay')
 
-    console.log(botonesPlayVideos);
-
     setTimeout(() => {
         cargaPageFlip()
         document.querySelector('.spinner').classList.add('hidden')
@@ -107,7 +105,6 @@ function cargaPageFlip() {
 
         if(idResetActual!=null){
             if(idResetActual!=''){
-                console.log(idResetActual);
                 document.querySelector(`#${idResetActual}`).classList.add('disabledbutton')
                 idResetActual=null
             }
@@ -152,7 +149,6 @@ function presentacionteclado(e) {
 function playVideo(id, videoP, idReset) {
     videoActualPosicion = videoP
     idResetActual = idReset
-    console.log(id);
     document.querySelector(`#${id}`).removeEventListener('click', playVideo, false)
     document.querySelector(`#${id}`).addEventListener('click', stopVideo, false)
     document.querySelector(`#${id}`).classList.remove('botonPlay')
