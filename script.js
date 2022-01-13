@@ -194,79 +194,7 @@ function resetVideo(idPlay, idReset) {
 }
 
 
-function Imprimir(idImagen) {
 
-    let base64StringImagen1 = imagenData(idImagen)
-    let imagenfondoAplicada = imagenData('imagen-fondo')
-
-
-    let ventanaPreview = window.open('', '', 'height=800, width=800');
-    ventanaPreview.document.write('<html>');
-    ventanaPreview.document.write('<head>');
-    ventanaPreview.document.write('<style>');
-    ventanaPreview.document.write(`
-
-
-@media print {
-    #botonImprimir{
-        display:none
-    }
-    textarea{
-        resize: none !important;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    body{
-        -webkit-print-color-adjust:exact;
-        -moz-print-color-adjust:exact;
-        -ms-print-color-adjust:exact;
-        print-color-adjust:exact;
-    } 
-
-   
-}
-
-@media print and (orientation:landscape)
-{
-    body{
-        -webkit-print-color-adjust:exact;
-        -moz-print-color-adjust:exact;
-        -ms-print-color-adjust:exact;
-        print-color-adjust:exact;
-    }    
-}`);
-    ventanaPreview.document.write('</style>');
-    ventanaPreview.document.write('<script src="https://cdn.tailwindcss.com"></script>');
-    ventanaPreview.document.write('</head>');
-    ventanaPreview.document.write('<body> <h1>Vista previa Impresion<br>');
-    ventanaPreview.document.write(`<div id="print"
-                                    class="w-full h-[70vh]  flex flex-col mx-auto mt-[10%] text-center justify-center items-center content-center border-2 border-gray-100"  style='background-image:${imagenfondoAplicada};background-repeat: no-repeat;background-size: 100% 100%;background-position: center center;'>
-                                    <img class=" w-[85%] h-[85%] object-contain "
-                                    src="${base64StringImagen1}" alt="escudo:alt">
-                                </div>`);
-    ventanaPreview.document.write('</body></html>');
-    ventanaPreview.document.close();
-
-    setTimeout(() => {
-        ventanaPreview.print();
-    }, 1200);
-
-
-}
-
-
-function imagenData(id) {
-    var c = document.createElement('canvas');
-    var img = document.getElementById(`${id}`);
-    c.height = img.naturalHeight;
-    c.width = img.naturalWidth;
-    var ctx = c.getContext('2d');
-
-    ctx.drawImage(img, 0, 0, c.width, c.height);
-    return c.toDataURL();
-}
 
 // Get the modal
 let modal = document.getElementById("myModal");
