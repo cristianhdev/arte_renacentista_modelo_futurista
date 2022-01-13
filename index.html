@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arte Renacentista un Modelo Futurista</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="node_modules/animate.css/animate.min.css"> -->
+    
+
+    <link rel="preload" href="styles.css" as="styles">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./src/animate.min.css">
+
+
+    <script rel="preload" type="text/javascript" src="./src/jquery.min.1.7.js"></script>
+    <script rel="preload" type="text/javascript" src="./src/modernizr.2.5.3.min.js"></script>
+    <script rel="preload" type="text/javascript" src="./src/turn.min.js"></script>
+    <script rel="preload" type="text/javascript" src="./src/sounds.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: Papyrus;
+            src: url(./assets/fonts/Papyrus.ttf);
+        }
+        @font-face {
+            font-family: Amerigo BT;
+            src: url(./assets/fonts/Amerigo_BT.ttf);
+        }
+    </style>
+
+</head>
+
+<body onload="init()">
+    <div style="position: absolute;top: 0px;z-index: 1;">
+        <img src="./assets/Img/logo.png" alt="logo: escuela nueva">
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!--  <span class="close">&times;</span> -->
+
+        </div>
+
+    </div>
+    <div class="contendor-bienvenida">
+        <div class="contenido-actividad-bienvenida">
+            <div class="spinner"></div>
+            <div class="flipbook-viewport hidden">
+                <div
+                    class="container mx-auto w-fit sm:w-fit  md:-translate-x-[1.5em] lg:md:-translate-x-[1.5em]  h-full flex flex-col items-center content-center justify-center">
+
+                    <div class="flipbook mx-auto w-full h-full ">
+                        <div>
+
+                            <div class="w-full h-full"
+                                style="background-image: url(./assets/img/Portada.png);background-size: 100% 100%;background-position:center center; background-repeat: no-repeat;">
+                            </div>
+
+
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+
+                            <div class="w-[85%]  h-90  p-6">
+                                <h1 class="text-2xl text-center text-cyan-900">Arte en el<br> Renacimiento</h1>
+                                <br>
+                                <p class="text-justify">El Renacimiento es considerado el renacer cultural el renacer
+                                    cultural del mundo antiguo, ya que se creía que durante la Edad Media se había
+                                    vivido en el oscurantismo, a causa de la gran influencia de las creencias
+                                    religiosas.</p>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h1 class="text-2xl text-center text-cyan-900">Arte en el<br> Renacimiento</h1>
+                                    <br>
+                                    <h4 class="text-2xl text-center text-cyan-900">Escultura y píntura</h4>
+                                    <br>
+                                    <ul class="list-disc ml-[23px]">
+                                        <li>
+                                            <span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(4)">Leonardo Da Vinci</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(6)">Rafael Sanzio</span>
+                                        </li>
+                                        <li>
+                                            <span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(8)">Vecellio Tiziano</span>
+                                        </li>
+                                        <li>
+                                            <span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(10)">Miguel Ángel Buonarroti</span>
+                                        </li>
+                                        <li>
+                                            <span class="cursor-pointer hover:underline" onclick="menuFlipBook(12)">El
+                                                Greco</span>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="text-2xl text-center text-cyan-900">Literatura</h4>
+                                    <br>
+                                    <ul class="list-disc ml-[23px]">
+                                        <li><span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(14)">Francesco Petrarca</span></li>
+                                        <li><span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(16)">Dante Alighieri</span></li>
+                                        <li><span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(18)">William Shakespeare</span></li>
+                                        <li><span class="cursor-pointer hover:underline"
+                                                onclick="menuFlipBook(20)">François Rabelais</span></li>
+                                    </ul>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Leonardo Da Vinci</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/Davinci.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay1"
+                                            onclick="playVideo(this.id,0,'botonReset1')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset1"
+                                            onclick="resetVideo('botonPlay1',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div>
+                                    <img class="w-90 h-[31vh] object-fit" src="./assets/img/monaLisa.jpg"
+                                        alt="escudo:alt">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Mona Lisa o La Gioconda</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Leonardo da Vinci <span class="text-[#771913]">(1452 - 1519).</span> Se destacó
+                                        como pintor, escultor, químico, matemático, ingeniero, poeta, músico, filósofo e
+                                        inventor. Su pintura caractarística fue La Mona Lisa o la Gioconda.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Rafael Sanzío</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/RafaelSa.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay2"
+                                            onclick="playVideo(this.id,1,'botonReset2')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset2"
+                                            onclick="resetVideo('botonPlay2',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div>
+                                    <img class="w-90 h-fit ml-4 object-fit" src="./assets/img/ImagenAtenas.png"
+                                        alt="escudo:alt">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Escuela de Atenas</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Rafael Sanzio <span class="text-[#771913]">(1483 - 1520).</span> Fue pintor de
+                                        Las madonas vírgenes. Su pintura fue idealista llena de dulzura y delicadeza.
+                                    </p>
+
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Vecellio Tizíano</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/Tiziano.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay3"
+                                            onclick="playVideo(this.id,2,'botonReset3')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset3"
+                                            onclick="resetVideo('botonPlay3',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div>
+                                    <img class="w-90 h-[31vh] object-fit" src="./assets/img/AlfonsoAvalos.jpg"
+                                        alt="escudo:alt">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Alfonso di`Avalos</h4>
+                                    <h4>Dirigiéndose a sus tropas</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Vecellio Tiziano <span class="text-[#771913]">(1490 - 1576).</span>. Famoso
+                                        pintor de esta escuela, cultivó el género mitológico, histórico y religioso.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Miguel Ángel Buonarrotí</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/MigelAngel.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay4"
+                                            onclick="playVideo(this.id,3,'botonReset4')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset4"
+                                            onclick="resetVideo('botonPlay4',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-fit object-fit" src="./assets/img/LaCreacion.jpg"
+                                        alt="escudo:alt" style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>La Creación de Adán</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Miguel Ángel Buonarroti <span class="text-[#771913]">(1475 - 1564).</span>
+                                        Trabajó como arquitecto en la basílica de San Pedro. Como pintor realizó en el
+                                        Vaticano los frescos del techo de la Capilla Sixtina. Su obra principal La
+                                        Piedad o La Pietá y El Moisés.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">El Greco</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/Elgreco.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay5"
+                                            onclick="playVideo(this.id,4,'botonReset5')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset5"
+                                            onclick="resetVideo('botonPlay5',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-fit object-fit" src="./assets/img/CuracionCiego.jpg"
+                                        alt="escudo:alt" style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>La curacíon del cíego</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        El greco <span class="text-[#771913]">(1542 - 1614).</span>
+                                        Le imprimió a sus cuadros realismo místico y se caracterizó por el uso de
+                                        figuras alargadas y estilizadas.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Francesco Petrarca</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/Francesco.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay6"
+                                            onclick="playVideo(this.id,5,'botonReset6')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset6"
+                                            onclick="resetVideo('botonPlay6',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-fit object-fit" src="./assets/img/LauraPetrarca.jpg"
+                                        alt="escudo:alt" style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Laura y el Petrarca, Canzoniere</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Franceso Petrarca <span class="text-[#771913]">(1304 - 1374).</span> Estudió a
+                                        profundidad la leteratura clásica y cultivó el latín literario en sus obras, por
+                                        lo que se le considera el precusor del humanismo.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Dante Alighieri</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/DanteAli.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay7"
+                                            onclick="playVideo(this.id,6,'botonReset7')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset7"
+                                            onclick="resetVideo('botonPlay7',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-fit object-fit" src="./assets/img/LadivinaComedia.jpg"
+                                        alt="escudo:alt" style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>La Divina Comedia</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        Dante Alighieri <span class="text-[#771913]">(1265 - 1321).</span> Es
+                                        considerado el mejor poeta italiano de todos los tiempos; su obra La Divina
+                                        Comedia, narra un viaje por el infierno, el purgartorio y por el cielo, además
+                                        expuso allí su ideología política y literaria.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">William Shakespeare</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/WillinShakespeare.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay8"
+                                            onclick="playVideo(this.id,7,'botonReset8')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset8"
+                                            onclick="resetVideo('botonPlay8',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-[28vh] object-fit" src="./assets/img/hamlet.jpg" alt="escudo:alt"
+                                        style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Hamlet</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        William Shakespeare <span class="text-[#771913]">(1564 - 1616).</span> Fue el
+                                        mayor genio del teatro inglés. Sus obras han repercutido en la cultura
+                                        occidental y los personajes por él creados repesentaron claramente la sociedad
+                                        de la época.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class="w-[85%] h-90  p-6 flex flex-col items-center content-center justify-center">
+                                <h1 class="text-2xl text-center text-cyan-900">Françoís Rabelais</h1>
+                                <br>
+                                <div
+                                    class="w-full h-fit flex flex-col items-center gap-3 content-center justify-evenly">
+                                    <div>
+                                        <video preload>
+                                            <source src="./assets/videos/FrancoisRabelais.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class=" flex flex-row items-center gap-3 content-center justify-center">
+                                        <div class="botonPlay" id="botonPlay9"
+                                            onclick="playVideo(this.id,8,'botonReset9')">
+
+                                        </div>
+                                        <div class="botonReset disabledbutton" id="botonReset9"
+                                            onclick="resetVideo('botonPlay9',this.id)">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="fondo-portada">
+                            <div class="w-full h-full flex flex-col items-center content-center justify-center">
+                                <div class="mx-auto">
+                                    <img class="w-50 h-fit object-fit" src="./assets/img/Francois.jpg"
+                                        alt="escudo:alt" style="margin-left: 23px;">
+                                </div>
+
+                                <div class="w-[85%]  h-90  p-6">
+                                    <h4>Pantagruel</h4>
+                                    <br>
+                                    <p class="text-justify">
+                                        François Rabelais <span class="text-[#771913]">(1494 - 1553).</span> Fraile
+                                        franciscano francés, se dedicó al estudio de las humanidades y llegó a ser un
+                                        erudito escritor.
+                                    </p>
+                                </div>
+                                <div
+                                    class="w-[85%]  h-90  p-2 flex flex-col items-center content-center justify-center">
+                                    <p class="text-justify cursor-pointer font-bold" onclick="menuFlipBook(2)">
+                                        <span class="text-[#771913]">MENU</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-80 h-full flex flex-col items-center content-center justify-center fondo-portada">
+                            <div class=" w-80 h-full mx-auto flex flex-col justify-center items-center content-center ">
+                                <img id="imagen-fondo" src="./assets/img/imagenFin.png" alt="escudo:alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="imagen-fondo" class=" w-[30vw] h-[80vh] hidden" src="./assets/img/fondoPortada.png" alt="escudo:alt">
+    <script type="text/javascript" src="script.js"></script>
+    <!-- Include lazylinepainter -->
+    <script src="./src/lazy-line-painter-1.9.6.min.js"></script>
+
+
+
+</body>
+
+</html>
